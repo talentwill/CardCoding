@@ -18,3 +18,13 @@ class Solution:
             cur.val = path
             cur = cur.left
         return root
+
+class Solution:
+    def convertBST(self, root: TreeNode) -> TreeNode:
+        def dfs(node: TreeNode, path: int) -> int:
+            if node:
+                node.val += dfs(node.right, path)
+                return dfs(node.left, node.val)
+            return path
+        dfs(root, 0)
+        return root
