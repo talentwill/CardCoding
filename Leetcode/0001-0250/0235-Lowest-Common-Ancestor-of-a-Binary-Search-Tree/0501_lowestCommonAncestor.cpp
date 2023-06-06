@@ -1,9 +1,14 @@
-// 剑指 Offer 68 - I. 二叉搜索树的最近公共祖先
+/**
+ * @Author: talentwill
+ * @Date:   2022-05-01 08:00:00
+ * @Last Modified by:   talentwill
+ * @Last Modified time: 2023-06-06 12:21:43
+ */
 
-// 0501 递归法
 class Solution {
 public:
-    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q)
+    {
         if (max(p->val, q->val) < root->val) {
             return lowestCommonAncestor(root->left, p, q);
         }
